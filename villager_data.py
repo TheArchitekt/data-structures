@@ -152,5 +152,21 @@ def find_likeminded_villagers(filename, villager_name):
         >>> find_likeminded_villagers('villagers.csv', 'Wendy')
         {'Bella', ..., 'Carmen'}
     """
+    data = open(filename)
+    alike = set()
+    specific_group = ''
 
-    # TODO: replace this with your code
+    for line in data:
+        name, species, group, hobby, motto= line.split('|')
+
+        if name == villager_name:
+            specific_group = group
+            break
+
+    if specific_group:
+        for line in data:
+            name, species, group, hobby, motto= line.split('|')
+            if group == specific_group:
+                alike.add(name)
+
+    return alike
