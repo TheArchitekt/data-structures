@@ -58,10 +58,34 @@ def all_names_by_hobby(filename):
     Return:
         - list[list[str]]: a list of lists containing names
     """
+    fitness = []
+    nature = []
+    education = []
+    music = []
+    fashion = []
+    play = []
 
-    # TODO: replace this with your code
+    data = open(filename)
 
-    return []
+    for line in data:
+        name, species, group, hobby, motto = line.split('|')
+
+        if hobby == 'Fitness':
+            fitness.append(name)
+        elif hobby == 'Nature':
+            nature.append(name)
+        elif hobby == 'Education':
+            education.append(name)
+        elif hobby == 'Music':
+            music.append(name)
+        elif hobby == 'Fashion':
+            fashion.append(name)
+        elif hobby == 'Play':
+            play.append(name)
+
+
+
+    return [fitness, nature, education, music, fashion, play]
 
 
 def all_data(filename):
