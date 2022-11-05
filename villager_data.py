@@ -103,7 +103,11 @@ def all_data(filename):
 
     all_data = []
 
-    # TODO: replace this with your code
+    data = open(filename)
+
+    for line in data:
+        all_data.append(tuple(line.split('|')))
+
 
     return all_data
 
